@@ -28,3 +28,11 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+
+# Tokenize string
+
+
+$ string="john is 17 years old"
+$ tokens=( $string )
+$ echo ${tokens[*]}
+
