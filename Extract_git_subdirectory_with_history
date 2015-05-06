@@ -1,0 +1,9 @@
+git remote rm origin
+git filter-branch --tag-name-filter cat --prune-empty --subdirectory-filter hal/helios -- --all
+git reset --hard
+git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+git reflog expire --expire=now --all
+git gc --aggressive --prune=now
+git init
+git remote add origin https://16.92.165.67/demo-developer/helios.git
+git push --all
