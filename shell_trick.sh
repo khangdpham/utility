@@ -36,3 +36,6 @@ $ string="john is 17 years old"
 $ tokens=( $string )
 $ echo ${tokens[*]}
 
+# Awk and Change change the last column's value
+cat manifest | awk -F',' -v awkvar=$RANDOM '{print $1","$2","$3","awkvar;}'
+
